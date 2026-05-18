@@ -1,7 +1,7 @@
-const API_URL =
-    process.env.NODE_ENV === 'development'
-        ? 'http://localhost:5000/api/projects'
-        : '/api/projects';
+const API_URL = 'https://consolecoloab-production.up.railway.app/api/projects';
+  //  process.env.NODE_ENV === 'development'
+  //      ? 'http://localhost:5000/api/projects'
+  //      : '/api/projects';
 
 const getHeaders = () => {
     const token = localStorage.getItem('token');

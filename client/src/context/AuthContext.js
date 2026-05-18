@@ -4,10 +4,11 @@ const AuthContext = createContext(null);
 
 // API base URL — in dev, CRA proxies to localhost:5000 via package.json proxy,
 // alternatively just hit the backend directly.
-const API_URL =
-    process.env.NODE_ENV === 'development'
-        ? 'http://localhost:5000/api/auth'
-        : '/api/auth';
+const API_URL = 'https://consolecoloab-production.up.railway.app/api/auth';
+
+ //   process.env.NODE_ENV === 'development'
+ //       ? 'http://localhost:5000/api/auth'
+ //       : 'https://consolecoloab-production.up.railway.app/api/auth';
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);

@@ -40,15 +40,20 @@ const CollaborativeEditor = ({ roomId, username, onCodeChange, onActiveUsers }) 
     ydocRef.current = ydoc;
 
     // Use current origin to derive WebSocket URL (works in dev & prod)
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    let host = window.location.host;
+    // const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    // let host = window.location.host;
 
     // Handle development mode (client on 3000, server on 5000)
-    if (host.includes('localhost:3000')) {
-      host = 'localhost:5000';
-    }
+    // if (host.includes('localhost:3000')) {
+    //   host = 'localhost:5000';
+    // }
 
-    const wsUrl = `${protocol}//${host}/yjs`;
+   // const wsUrl = `${protocol}//${host}/yjs`;
+
+   const wsUrl = 'wss://consolecoloab-production.up.railway.app/yjs';
+  //process.env.NODE_ENV === 'development'
+  //  ? 'ws://localhost:5000/yjs'
+   // : 'wss://consolecoloab-production.up.railway.app/yjs';
 
     const provider = new WebsocketProvider(wsUrl, roomId, ydoc);
     providerRef.current = provider;
