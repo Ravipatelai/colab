@@ -99,7 +99,7 @@ const Home = () => {
             <footer>
                 <h4>
                     Built by &nbsp;
-                    <a href="https://colab-five-sigma.vercel.app/">Ravikant kumar</a>
+                    <a href="https://ravi-patelcom.vercel.app/">Ravikant kumar</a>
                 </h4>
             </footer>
         </div>

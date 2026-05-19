@@ -1,8 +1,14 @@
 # 🧠 ConsoleCoLab v2.0.0 — Real-time Collaborative Code Editor
 
 ConsoleCoLab is a powerful real-time collaborative coding platform that allows multiple users to edit code together, in sync. Built for interviews, teaching, remote pair programming, and team collaboration.
+  
+**Live Link**  
 
-> **Live Demo:** Deploy to [Render](https://ConsoleCoLab-08ca.onrender.com/) or run locally — see setup below.
+> **Frontend:** Deploy to [vercel](https://colab-five-sigma.vercel.app/) or run locally — see setup below.
+
+> **Backend:** Deploy to [railway](https://consolecoloab-production.up.railway.app/)
+
+>**Git repo:** Deploy to [Git hub](https://github.com/Ravipatelai/colab.git)
 
 ---
 
@@ -51,14 +57,14 @@ ConsoleCoLab is a powerful real-time collaborative coding platform that allows m
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | React 17, Monaco Editor, React Router v6 |
+| Frontend | React 18, Monaco Editor, React Router v6 |
 | Backend | Node.js, Express.js |
 | Database | MongoDB + Mongoose |
 | Auth | JWT + bcryptjs |
 | Real-Time Sync | Yjs, y-websocket, y-monaco |
 | Signaling | Socket.IO (room join/leave events) |
 | Voice Chat | WebRTC (Peer-to-Peer Audio) |
-| Hosting | Render (or any Node.js host) |
+| Hosting | vercel (or any Node.js host) |
 
 ---
 
@@ -146,7 +152,7 @@ ConsoleCoLab/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ravipatelai/ConsoleCoLab.git
+git clone https://github.com/Ravipatelai/colab.git
 cd ConsoleCoLab
 ```
 
@@ -176,7 +182,7 @@ The Yjs WebSocket server is now unified with the main backend. No separate serve
 - **Socket.IO** (Voice Chat/Signaling)
 - **Yjs WebSocket** (Code Collaboration) at `/yjs`
 
-> **Note:** In production, ensure you use an uptime monitor (like UptimeRobot) to ping the `/health` endpoint to prevent Render's free tier from sleeping.
+> **Note:** In production, ensure you use an uptime monitor (like UptimeRobot) to ping the `/health` endpoint to prevent ralway free tier from sleeping.
 
 ---
 
@@ -285,7 +291,7 @@ npm run build
 ### Deploy to 
 
 1. Push code to GitHub
-2. Create a new **Web Service** on [Render](https://render.com)
+2. Create a new **Web Service** on [vercel](https://vercel.com)
 3. Set **Build Command:** `npm run install:all && npm run build`
 4. Set **Start Command:** `npm start`
 5. Add environment variables: `MONGO_URI`, `JWT_SECRET`, `PORT`
@@ -315,4 +321,4 @@ npm run build
 
 ---
 
-**Built with ❤️ by [Ravikant kumar](https://github.com/ravipatelai.git)**
+**Built with ❤️ by [Ravikant kumar](https://ravi-patelcom.vercel.app/)**
