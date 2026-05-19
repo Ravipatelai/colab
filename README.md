@@ -1,8 +1,8 @@
-# 🧠 CodeCoLab v2.0.0 — Real-time Collaborative Code Editor
+# 🧠 ConsoleCoLab v2.0.0 — Real-time Collaborative Code Editor
 
-CodeCoLab is a powerful real-time collaborative coding platform that allows multiple users to edit code together, in sync. Built for interviews, teaching, remote pair programming, and team collaboration.
+ConsoleCoLab is a powerful real-time collaborative coding platform that allows multiple users to edit code together, in sync. Built for interviews, teaching, remote pair programming, and team collaboration.
 
-> **Live Demo:** Deploy to [Render](https://codecolab-08ca.onrender.com/) or run locally — see setup below.
+> **Live Demo:** Deploy to [Render](https://ConsoleCoLab-08ca.onrender.com/) or run locally — see setup below.
 
 ---
 
@@ -65,7 +65,7 @@ CodeCoLab is a powerful real-time collaborative coding platform that allows mult
 ## 📁 Project Structure
 
 ```
-CodeCoLab/
+ConsoleCoLab/
 ├── package.json                        # Root orchestrator (scripts only)
 ├── .env                                # Server env vars
 ├── .gitignore
@@ -146,8 +146,8 @@ CodeCoLab/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Ravikant6055/CodeCoLab.git
-cd CodeCoLab
+git clone https://github.com/ravipatelai/ConsoleCoLab.git
+cd ConsoleCoLab
 ```
 
 ### 2. Install Dependencies
@@ -163,7 +163,7 @@ Create a `.env` file in the project root:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/codecolab
+MONGO_URI=mongodb://localhost:27017/ConsoleCoLab
 JWT_SECRET=your_super_secret_key_here
 ```
 
@@ -264,9 +264,9 @@ npm run dev
 
 ### 5. Code Runner
 
-1. In the editor, write: `console.log("Hello, CodeCoLab!")`
+1. In the editor, write: `console.log("Hello, ConsoleCoLab!")`
 2. Click **▶ Console** in the sidebar → panel opens at bottom
-3. Click **▶ Run** → should show: `› Hello, CodeCoLab!` + `✅ Finished (Xms)`
+3. Click **▶ Run** → should show: `› Hello, ConsoleCoLab!` + `✅ Finished (Xms)`
 4. Write `throw new Error("test")` → Run → should show red error
 5. Write `while(true) {}` → Run → should timeout after 10s
 6. Click **🗑 Clear** → output cleared
@@ -282,7 +282,7 @@ npm run dev
 npm run build
 ```
 
-### Deploy to Render
+### Deploy to 
 
 1. Push code to GitHub
 2. Create a new **Web Service** on [Render](https://render.com)
@@ -315,4 +315,4 @@ npm run build
 
 ---
 
-**Built with ❤️ by [Ravikant](https://github.com/)**
+**Built with ❤️ by [Ravikant kumar](https://github.com/ravipatelai.git)**

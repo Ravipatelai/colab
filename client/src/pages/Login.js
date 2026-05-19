@@ -47,7 +47,7 @@ const Login = () => {
                     src="/code-sync.png"
                     alt="code-sync-logo"
                 />
-                <h4 className="mainLabel">Login to CodeCoLab</h4>
+                <h4 className="mainLabel">Login to ConsoleCoLab</h4>
 
                 {error && <div className="errorBox">{error}</div>}
 
@@ -85,9 +85,11 @@ const Login = () => {
             </div>
             <footer>
                 <h4>
-                    Built by &nbsp;
-                    <a href="https://ravi-patelcom.vercel.app/">Ravikant</a>
-                </h4>
+  Built by&nbsp;
+  <a href="https://ravi-patelcom.vercel.app/" target="_blank" rel="noopener noreferrer">
+    Ravikant
+  </a>
+</h4>
             </footer>
         </div>
     );

@@ -80,9 +80,11 @@ footer a {
 
 .createNewBtn {
     color: #4aed88;
+    background-color: black;
     text-decoration: none;
     border-bottom: 1px solid black;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .createNewBtn:hover,

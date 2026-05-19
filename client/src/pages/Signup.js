@@ -58,7 +58,7 @@ const Signup = () => {
                     src="/code-sync.png"
                     alt="code-sync-logo"
                 />
-                <h4 className="mainLabel">Create a CodeCoLab Account</h4>
+                <h4 className="mainLabel">Create a ConsoleCoLab Account</h4>
 
                 {error && <div className="errorBox">{error}</div>}
 
@@ -103,10 +103,12 @@ const Signup = () => {
                 </div>
             </div>
             <footer>
-                <h4>
-                    Built by &nbsp;
-                    <a href="https://ravi-patelcom.vercel.app/">Ravikant</a>
-                </h4>
+               <h4>
+  Built by&nbsp;
+  <a href="https://ravi-patelcom.vercel.app/" target="_blank" rel="noopener noreferrer">
+    Ravikant
+  </a>
+</h4>
             </footer>
         </div>
     );
