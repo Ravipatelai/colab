@@ -185,7 +185,7 @@ export default function useRunner() {
               parent.postMessage({ type: 'done', duration: Date.now() - _startTime }, '*');
             }
           })();
-        <\/script>
+        </script>
       `;
 
             // 7. Inject code into iframe — this triggers execution

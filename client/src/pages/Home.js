@@ -87,20 +87,19 @@ const Home = () => {
                     </button>
                     <span className="createInfo">
                         If you don't have an invite then create &nbsp;
-                        <a
+                        <button
                             onClick={createNewRoom}
-                            href=""
                             className="createNewBtn"
                         >
                             new room
-                        </a>
+                        </button>
                     </span>
                 </div>
             </div>
             <footer>
                 <h4>
                     Built by &nbsp;
-                    <a href="https://priyanshu-raj-website.vercel.app/">Priyanshu Raj</a>
+                    <a href="*">Ravikant kumar</a>
                 </h4>
             </footer>
         </div>

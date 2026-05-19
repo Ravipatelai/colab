@@ -21,7 +21,7 @@ import {
   MdTerminal,
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
-  MdPerson
+ // MdPerson
 } from 'react-icons/md';
 
 const EditorPage = () => {
@@ -44,7 +44,7 @@ const EditorPage = () => {
   const [userProjects, setUserProjects] = useState([]);
   const [loadingProjects, setLoadingProjects] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [autoSave, setAutoSave] = useState(false);
+ // const [autoSave, setAutoSave] = useState(false);
   const autoSaveRef = useRef(null);
   const [showConsole, setShowConsole] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -117,8 +117,11 @@ const EditorPage = () => {
   };
 
   // Auto-save effect
+
+  //autoSave &&
+
   useEffect(() => {
-    if (autoSave && currentProjectId) {
+    if ( currentProjectId) {
       autoSaveRef.current = setInterval(async () => {
         try {
           await projectsApi.update(currentProjectId, {
@@ -138,8 +141,9 @@ const EditorPage = () => {
         autoSaveRef.current = null;
       }
     };
-  }, [autoSave, currentProjectId]);
+  }, [currentProjectId]);
 
+  // autoSave, 
   // Callback from CollaborativeEditor when code changes
   const handleCodeChange = useCallback((code) => {
     codeRef.current = code;

@@ -279,52 +279,61 @@ export default function useLiveAwareness({
     }, [ensureClientStyle, cleanupClient, providerRef, editorRef, monacoRef]);
 
     useEffect(() => {
-        if (!isReady) {
-            return;
+    if (!isReady) {
+        return;
+    }
+
+    const provider = providerRef.current;
+    const editorInstance = editorRef.current;
+    const monaco = monacoRef.current;
+
+    if (!provider || !editorInstance || !monaco) {
+        return;
+    }
+
+    const awareness = provider.awareness;
+    awarenessRef.current = awareness;
+
+    const handleAwarenessChange = () => {
+        if (rafIdRef.current === null) {
+            rafIdRef.current = requestAnimationFrame(renderDecorations);
+        }
+    };
+
+    awareness.on('change', handleAwarenessChange);
+
+    // Initial render
+    handleAwarenessChange();
+
+    return () => {
+        awareness.off('change', handleAwarenessChange);
+
+        if (rafIdRef.current !== null) {
+            cancelAnimationFrame(rafIdRef.current);
+            rafIdRef.current = null;
         }
 
-        const provider = providerRef.current;
-        const editor = editorRef.current;
-        const monaco = monacoRef.current;
-
-        if (!provider || !editor || !monaco) {
-            return;
+        // Cleanup decorations/widgets safely
+        if (editorInstance) {
+            for (const cid of Object.keys(cursorDecosRef.current)) {
+                cleanupClient(Number(cid), editorInstance);
+            }
         }
 
-        const awareness = provider.awareness;
-        const localClientID = awareness.clientID;
-        awarenessRef.current = awareness;
-
-        const handleAwarenessChange = () => {
-            // Schedule render if not already scheduled
-            if (rafIdRef.current === null) {
-                rafIdRef.current = requestAnimationFrame(renderDecorations);
-            }
-        };
-
-        awareness.on('change', handleAwarenessChange);
-        // Initial render
-        handleAwarenessChange();
-
-        return () => {
-            awareness.off('change', handleAwarenessChange);
-            if (rafIdRef.current !== null) {
-                cancelAnimationFrame(rafIdRef.current);
-                rafIdRef.current = null;
-            }
-
-            // Full cleanup
-            const editor = editorRef.current;
-            if (editor) {
-                for (const cid of Object.keys(cursorDecosRef.current)) {
-                    cleanupClient(Number(cid), editor);
-                }
-            }
-            cursorDecosRef.current = {};
-            selectionDecosRef.current = {};
-            widgetsRef.current = {};
-        };
-    }, [isReady, providerRef, editorRef, monacoRef, username, ensureClientStyle, cleanupClient, renderDecorations]);
+        cursorDecosRef.current = {};
+        selectionDecosRef.current = {};
+        widgetsRef.current = {};
+    };
+}, [
+    isReady,
+    providerRef,
+    editorRef,
+    monacoRef,
+    username,
+    ensureClientStyle,
+    cleanupClient,
+    renderDecorations,
+]);
 
     return { activeUsers };
 }
