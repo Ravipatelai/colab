@@ -146,7 +146,7 @@ CodeCoLab/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Priyanshu6055/CodeCoLab.git
+git clone https://github.com/Ravikant6055/CodeCoLab.git
 cd CodeCoLab
 ```
 
@@ -315,4 +315,4 @@ npm run build
 
 ---
 
-**Built with ❤️ by [Priyanshu](https://github.com/)**
+**Built with ❤️ by [Ravikant](https://github.com/)**

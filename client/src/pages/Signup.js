@@ -105,7 +105,7 @@ const Signup = () => {
             <footer>
                 <h4>
                     Built by &nbsp;
-                    <a href="https://priyanshu-raj-website.vercel.app/">Priyanshu Raj</a>
+                    <a href="https://ravi-patelcom.vercel.app/">Ravikant</a>
                 </h4>
             </footer>
         </div>
